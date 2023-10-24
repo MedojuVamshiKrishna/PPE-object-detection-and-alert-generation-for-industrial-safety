@@ -1,0 +1,8 @@
+#image preprocessing and video capturing
+opencv-python
+#for model training and loading the model
+ultralytics
+# for creating a text to speech engine
+pyttsx3
+# python
+IPython

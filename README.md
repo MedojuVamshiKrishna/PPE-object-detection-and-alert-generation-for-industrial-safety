@@ -1,0 +1,1 @@
+# Video analytics project for industrial safety employs object detection in deep learning to automatically detect Personal protective equipment(PPE) worn by workers and identifies workplace hazards in industrial environments using deep learning YOLOv8 network and immediately generates the real-time voice alerts. 

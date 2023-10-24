@@ -3,23 +3,22 @@ import pyttsx3
 from ultralytics import YOLO
 
 def cameracapture():
-    cap=cv2.VideoCapture(0)
-    count=0
-    while True:
-        ret,frame=cap.read()
-        if not ret: 
-            break
-        count += 1
-        if count % 3 != 0:  
-            continue
-        frame=cv2.resize(frame,(1020,600))
-        cv2.imshow("FRAME",frame)
-        results=detect_objects_and_speak(frame)
-        # cv2.imshow("FRAME",frame)
-        if cv2.waitKey(1)&0xFF==27:
-            break
-    cap.release()
-    cv2.destroyAllWindows()
+  cap=cv2.VideoCapture(0)
+  count=0
+  while True:
+    ret,frame=cap.read()
+    if not ret: 
+      break
+    count += 1
+    if count % 3 != 0:  
+      continue
+    frame=cv2.resize(frame,(1020,600))
+
+    # Add the following code to increase the frame rate while displaying the output
+    cv2.imshow("FRAME",frame)
+    detect_objects_and_speak(frame)
+    if cv2.waitKey(1) == 27:
+      break
 
 model = YOLO("best.pt")
 def detect_objects_and_speak(image):
